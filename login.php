@@ -1,4 +1,9 @@
-<?php require 'inc/head.php'; ?>
+<?php
+if(!isset($_SESSION))session_start();
+require_once 'inc/head.php';
+
+?>
+
 <div class="container" style="margin-top:40px">
     <div class="row">
         <div class="col-sm-6 col-md-4 col-md-offset-4">
@@ -42,4 +47,9 @@
         </div>
     </div>
 </div>
-<?php require 'inc/foot.php'; ?>
+<?php
+
+
+
+require 'inc/foot.php';
+

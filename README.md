@@ -1,4 +1,17 @@
-sélectionnés# Template pour : Quêtes  PHP Cookies & Sessions
+
+************************************************************
+Principe de fontionnement : 
+
+
+* Full objet. ( ou presque ) 
+* La classe session manager est instancier en prmier dans le header . 
+* A chaque chargement de page un objet SessionManager est creer. 
+* L'objet SessionManager gerer toute l'intéligence et les action sont redirigé en fontion de l'URI demandée . 
+* La classe SessionUser contiend toutes les informations en rapport avec la session dont les arcticles ajoutés au panier . 
+* La SessionUser Implements la une interface Serializable ce qui permet de tranformer l'objet en string ( necessaire pour le stocker en $_SESSION)
+************************************************************
+
+
 
 Ce Template html va te permettre de réaliser ta quête sur la gestion des cookies et des sessions avec PHP.
 

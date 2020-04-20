@@ -1,3 +1,13 @@
+<?php
+if(!isset($_SESSION))session_start();
+$absolutePath = $_SERVER["DOCUMENT_ROOT"];
+require_once $absolutePath . "/SessionManager.php";
+
+$sessionManage = new SessionManager($_SERVER['REQUEST_URI']);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,8 +45,8 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Chocolates chips</a></li>
-                    <li><a href="#">Nuts</a></li>
-                    <li><a href="#">Gluten full</a></li>
+                    <li><a href="/login.php?request=<?= $sessionManage->getUserName(); ?>">login</a></li>
+                    <li><a href="/login.php?request=deconnect">Deconnexion</a></li>
                     <li>
                         <a href="/cart.php" class="btn btn-warning navbar-btn">
                             <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
@@ -48,6 +58,6 @@
         </div><!-- /.container-fluid -->
     </nav>
     <div class="container-fluid text-right">
-        <strong>Hello Wilder !</strong>
+        <strong><?php echo "Hello utilisateur : " . $sessionManage->getUserName() ?></strong>
     </div>
 </header>
